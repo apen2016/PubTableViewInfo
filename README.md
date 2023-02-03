@@ -1,2 +1,29 @@
 # PubTableViewInfo
-这是一个简单易用的页面布局库，任何UI控件皆cell。
+
+[![CI Status](https://img.shields.io/travis/linqipeng/PubTableViewInfo.svg?style=flat)](https://travis-ci.org/linqipeng/PubTableViewInfo)
+[![Version](https://img.shields.io/cocoapods/v/PubTableViewInfo.svg?style=flat)](https://cocoapods.org/pods/PubTableViewInfo)
+[![License](https://img.shields.io/cocoapods/l/PubTableViewInfo.svg?style=flat)](https://cocoapods.org/pods/PubTableViewInfo)
+[![Platform](https://img.shields.io/cocoapods/p/PubTableViewInfo.svg?style=flat)](https://cocoapods.org/pods/PubTableViewInfo)
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+## Installation
+
+PubTableViewInfo is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'PubTableViewInfo'
+```
+
+## Author
+
+linqipeng, linqipeng@70mai.com
+
+## License
+
+PubTableViewInfo is available under the MIT license. See the LICENSE file for more info.

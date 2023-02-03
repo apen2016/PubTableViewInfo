@@ -1,0 +1,6 @@
+framework module PubTableViewInfo {
+  umbrella header "PubTableViewInfo-umbrella.h"
+
+  export *
+  module * { export * }
+}

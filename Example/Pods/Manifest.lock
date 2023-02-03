@@ -1,0 +1,23 @@
+PODS:
+  - PubTableViewInfo (0.1.0):
+    - SnapKit (~> 5.6.0)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - PubTableViewInfo (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+
+EXTERNAL SOURCES:
+  PubTableViewInfo:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PubTableViewInfo: 1eba7da4209c86f1dedd015a5f53d186f5cb934e
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: c96a38711601f5dfc754805e241440ca37ce3bf9
+
+COCOAPODS: 1.11.2
