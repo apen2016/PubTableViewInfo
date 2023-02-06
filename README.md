@@ -1,11 +1,9 @@
 # PubTableViewInfo
-一个简单的页面布局库，对UITableView，UICollectionView简单封装。
+一个简单的页面布局库，对UITableView，UICollectionView简单封装,点击事件封装，免写代理。
 
 ## 简单用法
 
-import UIKit
-import PubTableViewInfo
-
+ <pre><code>
 class ViewController: UIViewController {
     
     lazy var tableViewInfo:PubTableViewInfo = {
@@ -49,13 +47,41 @@ class ViewController: UIViewController {
         
         
         
-        // 2.再创建一个 sectionModel
+        // 2.再创建一个 sectionModel （带有点击事件）
         let section2 = PubSectionModel.defaultSection()
         section2.headerView = headerView
         section2.headerHeight = 50
-        section2.addCells(Array<Any>.arrayWithClassName(NSStringFromClass(CustomCell.self), height: 0, models: getModels()))
         
-        // 刷新列表
+        
+        let cells = Array<Any>.arrayWithClassName(NSStringFromClass(CustomCell.self), height: 0, models: getModels())
+        
+        // 给cell数组 添加cell点击事件
+        let cellClick:ClickCell = {cellModel in
+            let cModel = cellModel.getModel() as? CustomModel
+            print("---- \(cModel?.name ?? "")")
+        }
+        cells.arrayAddDefaultClickCell(cellClick)
+        
+        
+        //给cell数组 添加cell上的按钮添加点击事件
+        let click:ClickCell = {cellModel in
+            let cModel = cellModel.getModel() as? CustomModel
+            print("----点击按钮 \(cModel?.name ?? "")")
+        }
+        cells.arrayAddDictWithClickEvents(["click":click])
+    
+        section2.addCells(cells)
+        
+        
+        //增加一个cell 并且添加cell点击事件
+        let cell = PubCellModel.initCellModel(className: NSStringFromClass(CustomCell.self), height: 0, model: CustomModel()).defaultClickCell({ cellModel in
+            let cModel = cellModel.getModel() as? CustomModel
+            print("---- \(cModel?.name ?? "")")
+        })
+        section2.addCell(cell)
+        
+        
+        // 3.刷新列表
         tableViewInfo.resetDataList([section1,section2])
     }
     
@@ -88,11 +114,15 @@ class ViewController: UIViewController {
         return v
     }()
 }
-
+ </code></pre>
+ 
+ <pre><code>
 class CustomModel:PubBaseModel {
     var name:String?
 }
-
+ </code></pre>
+ 
+ <pre><code>
 class CustomCell:PubBaseTableViewCell {
     lazy var titleLabel:UILabel = {
         let v = UILabel()
@@ -100,6 +130,20 @@ class CustomCell:PubBaseTableViewCell {
         mainView.addSubview(v)
         return v
     }()
+    lazy var rightButton:UIButton = {
+        let btn = UIButton()
+        mainView.addSubview(btn)
+        btn.backgroundColor = .brown
+        btn.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func buttonClick() {
+        if let model = self.model,let clickEvent = model.clickEvents["click"] as? ClickCell{
+            clickEvent(model)
+        }
+
+    }
     
     override func updateConstraintsWithSnp() {
         super.updateConstraintsWithSnp()
@@ -107,21 +151,24 @@ class CustomCell:PubBaseTableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
         }
+        rightButton.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.right.equalTo(-20)
+            make.height.equalTo(35)
+            make.width.equalTo(60)
+        }
     }
     override func setModel(_ model: PubCellModel) {
         super.setModel(model)
         let cModel = model.getModel() as? CustomModel
-        titleLabel.text = cModel?.name
+        titleLabel.text = cModel?.name ?? "defautName"
     }
 }
-
  </code></pre>
  
  <div align = "center">
     <img src = "https://github.com/apen2016/PubTableViewInfo/blob/master/IMG/screenShot1.jpeg?raw=true">
 </div>
-
-<pre><code>
 
 ## Installation
 

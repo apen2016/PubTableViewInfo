@@ -157,6 +157,7 @@ public extension Array{
     }
     
     ///给每个CellModel 添加cell点击事件
+    @discardableResult
     func arrayAddDefaultClickCell(_ clickCell:ClickCell?) -> Array<PubCellModel> {
 
         return arrayModifyWith { cellModel in
@@ -165,6 +166,7 @@ public extension Array{
     }
     
     ///给每个CellModel 添加其他点击事件
+    @discardableResult
     func arrayAddDictWithClickEvents(_ dict:[String:Any]) -> Array<PubCellModel> {
         return arrayModifyWith { cellModel in
             cellModel.addDictWithClickEvents(dict)
