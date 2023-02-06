@@ -3,7 +3,7 @@
 
 ## 简单用法
 
-![image](​https://github.com/apen2016/PubTableViewInfo/blob/master/IMG/screenShot1.jpeg?raw=true)
+![image text](​https://github.com/apen2016/PubTableViewInfo/blob/master/IMG/screenShot1.jpeg?raw=true)
 
 <pre><code>
 import UIKit
