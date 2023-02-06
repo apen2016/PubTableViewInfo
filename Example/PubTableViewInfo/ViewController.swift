@@ -58,17 +58,25 @@ class ViewController: UIViewController {
         section2.headerHeight = 50
         
         
+        //添加一个cell 并且添加cell点击事件
+        let cell = PubCellModel.initCellModel(className: NSStringFromClass(CustomCell.self), height: 0, model: CustomModel()).defaultClickCell({ cellModel in
+            let cModel = cellModel.getModel() as? CustomModel
+            print("---- \(cModel?.name ?? "")")
+        })
+        section2.addCell(cell)
+        
+        
+        //添加多个数组
         let cells = Array<Any>.arrayWithClassName(NSStringFromClass(CustomCell.self), height: 0, models: getModels())
         
-        // 给cell数组 添加cell点击事件
+        // 给所有cell 添加cell点击事件
         let cellClick:ClickCell = {cellModel in
             let cModel = cellModel.getModel() as? CustomModel
             print("---- \(cModel?.name ?? "")")
         }
         cells.arrayAddDefaultClickCell(cellClick)
         
-        
-        //给cell数组 添加cell上的按钮添加点击事件
+        //给所有cell 添加按钮添加点击事件
         let click:ClickCell = {cellModel in
             let cModel = cellModel.getModel() as? CustomModel
             print("----点击按钮 \(cModel?.name ?? "")")
@@ -78,14 +86,7 @@ class ViewController: UIViewController {
         section2.addCells(cells)
         
         
-        //增加一个cell 并且添加cell点击事件
-        let cell = PubCellModel.initCellModel(className: NSStringFromClass(CustomCell.self), height: 0, model: CustomModel()).defaultClickCell({ cellModel in
-            let cModel = cellModel.getModel() as? CustomModel
-            print("---- \(cModel?.name ?? "")")
-        })
-        section2.addCell(cell)
-        
-        
+
         // 3.刷新列表
         tableViewInfo.resetDataList([section1,section2])
     }
