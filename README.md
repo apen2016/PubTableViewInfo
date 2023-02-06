@@ -3,6 +3,10 @@
 
 ## 简单用法
 
+ <div align = "center">
+    <img src = "https://github.com/apen2016/PubTableViewInfo/blob/master/IMG/screenshot2.png?raw=true">
+</div>
+
  <pre><code>
 class ViewController: UIViewController {
     
@@ -166,9 +170,6 @@ class CustomCell:PubBaseTableViewCell {
 }
  </code></pre>
  
- <div align = "center">
-    <img src = "https://github.com/apen2016/PubTableViewInfo/blob/master/IMG/screenShot1.jpeg?raw=true">
-</div>
 
 ## Installation
 
