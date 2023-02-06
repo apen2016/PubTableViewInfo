@@ -3,7 +3,9 @@
 
 ## 简单用法
 
-![image text](​https://github.com/apen2016/PubTableViewInfo/blob/master/IMG/screenShot1.jpeg?raw=true)
+<div align = "center">
+    <img src = "https://github.com/apen2016/PubTableViewInfo/blob/master/IMG/screenShot1.jpeg?raw=true">
+</div>
 
 <pre><code>
 import UIKit
