@@ -37,14 +37,14 @@ extension PubBaseCollectionViewDataDelegate:UICollectionViewDataSource{
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let seticonModel = dataList[indexPath.section]
         var reusablebview:PubBaseCollectionReusableView?
-        if kind == UICollectionElementKindSectionHeader {
+        if kind == UICollectionView.elementKindSectionHeader {
             let header = seticonModel.sectionInfo[SectionModelHeader] as? String
             if let identifier = header {
                 reusablebview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier, for: indexPath) as? PubBaseCollectionReusableView
                 reusablebview?.setSection(seticonModel)
             }
         }
-        if kind == UICollectionElementKindSectionFooter {
+        if kind == UICollectionView.elementKindSectionFooter {
             let footer = seticonModel.sectionInfo[SectionModelFooter] as? String
             if let identifier = footer {
                 reusablebview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier, for: indexPath) as? PubBaseCollectionReusableView

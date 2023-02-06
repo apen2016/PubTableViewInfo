@@ -763,7 +763,7 @@
 			};
 			name = Release;
 		};
-		4991AEDDBD9B387640BFAA3A9CBCCF02 /* Release */ = {
+		2FBAACBC920DEBEFF5828393CC096461 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E6A64E15F4A534C4520DF166FD18663 /* PubTableViewInfo.release.xcconfig */;
 			buildSettings = {
@@ -787,13 +787,44 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		411A3B27D8123C7DCBB15FD9D695989B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9AF66740174034C34FA69B5041E8EEB /* PubTableViewInfo.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PubTableViewInfo/PubTableViewInfo-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PubTableViewInfo/PubTableViewInfo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PubTableViewInfo/PubTableViewInfo.modulemap";
+				PRODUCT_MODULE_NAME = PubTableViewInfo;
+				PRODUCT_NAME = PubTableViewInfo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		5E688C1D9007635ED97D3AD468C28D3E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1086,37 +1117,6 @@
 			};
 			name = Debug;
 		};
-		F1B55EBBD8F1559979E70B65A815B259 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9AF66740174034C34FA69B5041E8EEB /* PubTableViewInfo.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PubTableViewInfo/PubTableViewInfo-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PubTableViewInfo/PubTableViewInfo-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PubTableViewInfo/PubTableViewInfo.modulemap";
-				PRODUCT_MODULE_NAME = PubTableViewInfo;
-				PRODUCT_NAME = PubTableViewInfo;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1159,8 +1159,8 @@
 		E76635D535A9E214C027ACCCC1DD3BCE /* Build configuration list for PBXNativeTarget "PubTableViewInfo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F1B55EBBD8F1559979E70B65A815B259 /* Debug */,
-				4991AEDDBD9B387640BFAA3A9CBCCF02 /* Release */,
+				411A3B27D8123C7DCBB15FD9D695989B /* Debug */,
+				2FBAACBC920DEBEFF5828393CC096461 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
