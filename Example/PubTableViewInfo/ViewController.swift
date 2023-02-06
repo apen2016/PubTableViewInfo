@@ -29,12 +29,13 @@ class ViewController: UIViewController {
     
     func setupCell(){
         
-        let section = PubSectionModel.defaultSection()
+        // 1.创建一个 sectionModel
+        let section1 = PubSectionModel.defaultSection()
         
         // 画一个view 当做一个cell
-        section.addCell(PubCellModel.createWithViewCell(color: .red, height: 100, viewDefine: { view in
+        section1.addCell(PubCellModel.createWithViewCell(color: .red, height: 100, viewDefine: { view in
             let label  = UILabel.init()
-            label.backgroundColor = .gray
+            label.backgroundColor = .green
             label.text = "hello swift"
             view.addSubview(label)
             
@@ -44,12 +45,21 @@ class ViewController: UIViewController {
         }))
         
         // 添加一个自定义view 当做一个cell
-        section.addCell(PubCellModel.createWithViewCell(cView, color: .green, height: 40))
+        section1.addCell(PubCellModel.createWithViewCell(cView, color: .blue, height: 40))
         
         // 添加多个规则 cell
-        section.addCells(Array<Any>.arrayWithClassName(NSStringFromClass(CustomCell.self), height: 0, models: getModels()))
+        section1.addCells(Array<Any>.arrayWithClassName(NSStringFromClass(CustomCell.self), height: 0, models: getModels()))
         
-        tableViewInfo.resetDataList([section])
+        
+        
+        // 2.再创建一个 sectionModel
+        let section2 = PubSectionModel.defaultSection()
+        section2.headerView = headerView
+        section2.headerHeight = 50
+        section2.addCells(Array<Any>.arrayWithClassName(NSStringFromClass(CustomCell.self), height: 0, models: getModels()))
+        
+        // 刷新列表
+        tableViewInfo.resetDataList([section1,section2])
     }
     
     func getModels()->[CustomModel] {
@@ -61,11 +71,11 @@ class ViewController: UIViewController {
         
         let m2 = CustomModel()
         m2.name = "m2"
-        list.append(m1)
+        list.append(m2)
         
         let m3 = CustomModel()
         m3.name = "m3"
-        list.append(m1)
+        list.append(m3)
         
         return list
     }
@@ -75,7 +85,11 @@ class ViewController: UIViewController {
         return v
     }()
 
-    
+    lazy var headerView:UIView = {
+        let v = UIView.init()
+        v.backgroundColor = .gray
+        return v
+    }()
 }
 
 class CustomModel:PubBaseModel {

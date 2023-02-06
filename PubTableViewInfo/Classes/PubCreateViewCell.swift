@@ -1,9 +1,9 @@
 //
 //  PubCreateViewCell.swift
-//  MainPart_IOS
+//  TableViewInfo
 //
 //  Created by 林其鹏 on 2022/9/26.
-//  Copyright © 2022 七十迈数字科技移动软件. All rights reserved.
+//  Copyright © 2022 linqipeng. All rights reserved.
 //
 
 import Foundation

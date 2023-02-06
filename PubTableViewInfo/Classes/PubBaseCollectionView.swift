@@ -1,9 +1,9 @@
 //
 //  PubBaseCollectionView.swift
-//  MainPart_IOS
+//  TableViewInfo
 //
 //  Created by 林其鹏 on 2022/10/24.
-//  Copyright © 2022 七十迈数字科技移动软件. All rights reserved.
+//  Copyright © 2022 linqipeng. All rights reserved.
 //
 
 import Foundation
@@ -14,7 +14,7 @@ open class PubBaseCollectionView:UICollectionView {
     lazy var registerClasses:[String:String] = [:]
     
     public override func dequeueReusableCell(withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionViewCell {
-        let clsName = registerClasses[identifier] as? String
+        let clsName = registerClasses[identifier]
         if clsName == nil {
             self.register(NSClassFromString(identifier), forCellWithReuseIdentifier: identifier)
             registerClasses[identifier] = identifier
@@ -22,7 +22,7 @@ open class PubBaseCollectionView:UICollectionView {
         return super.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
     }
     public override func dequeueReusableSupplementaryView(ofKind elementKind: String, withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionReusableView {
-        let clsName = registerClasses[identifier] as? String
+        let clsName = registerClasses[identifier]
         if clsName == nil {
             self.register(NSClassFromString(identifier), forSupplementaryViewOfKind: elementKind, withReuseIdentifier: identifier)
             registerClasses[identifier] = identifier
