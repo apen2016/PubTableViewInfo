@@ -3,11 +3,6 @@
 
 ## 简单用法
 
-<div align = "center">
-    <img src = "https://github.com/apen2016/PubTableViewInfo/blob/master/IMG/screenShot1.jpeg?raw=true">
-</div>
-
-<pre><code>
 import UIKit
 import PubTableViewInfo
 
@@ -121,6 +116,12 @@ class CustomCell:PubBaseTableViewCell {
 }
 
  </code></pre>
+ 
+ <div align = "center">
+    <img src = "https://github.com/apen2016/PubTableViewInfo/blob/master/IMG/screenShot1.jpeg?raw=true">
+</div>
+
+<pre><code>
 
 ## Installation
 
