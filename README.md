@@ -3,7 +3,9 @@
 
 ## 简单用法
 
+![image](​ ​https://github.com/apen2016/PubTableViewInfo/blob/master/IMG/screenShot1.jpeg)
 
+<pre><code>
 import UIKit
 import PubTableViewInfo
 
@@ -116,7 +118,7 @@ class CustomCell:PubBaseTableViewCell {
     }
 }
 
-
+ </code></pre>
 
 ## Installation
 
