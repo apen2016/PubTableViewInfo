@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PubTableViewInfo'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'tableView布局封装'
   s.swift_version = '5.0'
 
